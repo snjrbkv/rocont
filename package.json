@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build && npm run scss && npm run postcss",
     "preview": "vite preview",
-    "scss": "sass src/scss:dist/css --no-source-map",
+    "scss": "sass src/styles:dist/css --no-source-map",
     "postcss": "postcss dist/css/*.css -d dist/css/",
     "watch": "sass --watch src/scss:dist/css"
   },

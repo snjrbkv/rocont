@@ -1,0 +1,135 @@
+@use "../base/variables" as *;
+
+.carusel__in {
+  padding: 96px 0;
+  display: flex;
+  position: relative;
+}
+
+.carusel__in__text {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.carusel__in__slider-pagination {
+  img {
+    pointer-events: all;
+    background-color: $color-accent;
+
+    border-radius: 50px;
+    padding-right: 8px;
+    color: $color-black;
+
+    &.disabled {
+      background-color: transparent;
+      filter: brightness(0); // делает иконку чёрной
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+  img:nth-child(1) {
+    transform: rotate(180deg);
+  }
+}
+
+.carusel__in__slider-cards {
+  width: 80%;
+  overflow: hidden;
+  display: flex;
+  gap: 8px;
+}
+.slider-card {
+  position: relative;
+  width: 300px !important;
+  height: 450px;
+  display: block;
+  border-radius: 24px;
+  img {
+    width: 300px !important;
+    height: 450px;
+    border-radius: 24px;
+    z-index: -3;
+    object-fit: cover;
+  }
+}
+.slider-card__hover-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  bottom: 0;
+  padding: 32px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(31, 139, 72, 0) 31.3%, #1f8b48 100%);
+  gap: 8px;
+  display: none;
+  user-select: none;
+  * {
+    width: 100%;
+    color: $color-white;
+  }
+}
+.slider-card:hover .slider-card__hover-text {
+  display: flex;
+}
+.carusel__in__slider-cards.grabbing {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+@media only screen and (max-width: 1024px) {
+  .carusel__in__text {
+    width: 30%;
+  }
+  .carusel__in__slider-cards {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .slider-card {
+    width: 250px;
+    height: 350px;
+    img {
+      width: 250px !important;
+      height: 350px;
+    }
+  }
+}
+@media only screen and (max-width: 640px) {
+  .carusel__in {
+    flex-direction: column;
+    padding: 64px 0;
+  }
+  .carusel__in__text {
+    width: 100%;
+    margin-bottom: 24px;
+    .carusel__in__slider-pagination {
+      display: none;
+    }
+  }
+  .carusel__in__slider-cards {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+  .slider-card__hover-text {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .slider-card {
+    width: 250px;
+    height: 280px;
+    img {
+      width: 250px !important;
+      height: 280px;
+    }
+  }
+  .carusel__in__text {
+    width: 100%;
+  }
+}

@@ -1,0 +1,115 @@
+@use "../base/variables" as *;
+.contact__in {
+  padding: 64px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.contact__in__left-box,
+.contact__in__right-box {
+  width: 50%;
+  background-color: $color-white;
+  height: 435px;
+  border-radius: 24px;
+}
+.contact__in__left-box {
+  padding: 64px;
+  .contact__in__left-box__list {
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    li,
+    p {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      img {
+        display: block;
+        align-self: center;
+      }
+    }
+  }
+  button {
+    margin-top: 32px;
+    background-color: $color-green;
+    padding: 20px 24px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: $color-white;
+    img {
+    }
+  }
+}
+.contact__in__right-box {
+  overflow: hidden;
+  .map-wrapper {
+    width: 100%;
+    height: 100%;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 24px;
+    }
+  }
+}
+@media only screen and (max-width: 960px) {
+  .contact__in__left-box {
+    width: 60%;
+  }
+  .contact__in__right-box {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .contact__in {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact__in__left-box,
+  .contact__in__right-box {
+    width: 100%;
+    height: auto;
+    padding: 32px;
+  }
+  .contact__in__right-box {
+    padding: 0;
+    height: 250px;
+  }
+  .contact__in__left-box {
+    margin-bottom: 16px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .contact__in__left-box {
+    padding: 24px;
+  }
+  .contact__in__right-box {
+    height: 220px;
+  }
+  .contact__in__left-box__list {
+    gap: 12px;
+  }
+  .contact__in__left-box__list__item:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    p {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+}
+@media only screen and (max-width: 320px) {
+  .contact__in__left-box {
+    button {
+      width: 100%;
+      padding: 16px 24px;
+      justify-content: space-between;
+    }
+  }
+}

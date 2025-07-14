@@ -1,0 +1,134 @@
+@use "../base/variables" as *;
+.form__in {
+  padding: 64px;
+  display: flex;
+  width: 100%;
+  height: 344px;
+  border-radius: 16px;
+  background-color: $color-green;
+
+  * {
+    color: $color-white;
+  }
+}
+.form__left-box {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.form__left-box__list {
+  margin-top: 32px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.form__left-box__list__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  img {
+    display: block;
+    align-self: center;
+  }
+}
+.form__right-box {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  form {
+    width: 100%;
+    input {
+      padding: 8px 24px;
+      width: 90%;
+      height: 40px;
+      border: none;
+      outline: none;
+      color: $color-gray;
+      border-radius: 40px;
+    }
+    input:nth-child(2) {
+      margin: 8px 0;
+    }
+    .note {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    button {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: $color-white;
+      padding: 20px 24px;
+      border-radius: 40px;
+      color: $color-gray;
+      img {
+        background-color: $color-green;
+        border-radius: 50px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 960px) {
+  .form__in {
+    height: 291px;
+    padding: 48px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .form__in {
+    flex-direction: column;
+    height: auto;
+    padding: 32px;
+  }
+  .form__left-box {
+    width: 100%;
+    height: auto;
+  }
+  .form__right-box {
+    width: 100%;
+    height: auto;
+    form {
+      margin-top: 24px;
+      input {
+        width: 50%;
+      }
+    }
+  }
+  .inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    input {
+      width: 50%;
+      margin: 0;
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .form__in {
+    padding: 24px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  form {
+    button {
+      width: 100%;
+      padding: 16px 24px;
+      justify-content: space-between;
+    }
+    .inputs {
+      flex-direction: column;
+      input {
+        width: 100% !important;
+      }
+    }
+  }
+}
